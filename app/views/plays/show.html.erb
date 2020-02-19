@@ -7,6 +7,9 @@
             <h2 class="play__info play--title"><%= @play.title %></h2>
             <h3 class="play__info play--director"><span>De:</span><%= @play.director %></h3>
             <h4 class="play__info play--category"><%= @play.category.name %></h4>
+            <h4 class="avg-rating">Average rating</h4>
+            <div class="average-review-rating" data-score="<%= @average_review %>"></div>
+            <span class="number-of-reviews"> <em>De: </em><%= @play.reviews.count %> reviews</span>
             <p class="play__info play--description"><%= @play.description %></p>
             <label for=""><%= @play.stars %></label>
         </div>
@@ -32,3 +35,23 @@
         <% end  %>
     <% end %>    
 </div>
+
+<script>
+    $('.review-rating').raty({
+        readOnly: true,
+        score: function(){
+            return $(this).attr('data-score');
+        },
+        path: '/assets/'
+    });
+</script>
+
+<script>
+    $('.average-review-rating').raty({
+        readOnly: true,
+        score: function(){
+            return $(this).attr('data-score');
+        },
+        path: '/assets/'
+    });
+</script>
