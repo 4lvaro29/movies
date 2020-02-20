@@ -16,6 +16,7 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "sass/*";
 
  .play {
      height: 350px;
@@ -27,6 +28,6 @@
      width: 325px;
  }
 
- .play__info {
-     
+ .play-info {
+     margin: 1rem 0;
  }
